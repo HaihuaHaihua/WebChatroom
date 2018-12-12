@@ -1,0 +1,7 @@
+
+<div class="message" id="m{{ message["id"] }}" >
+    <div style="height: auto;width: 450px">
+        <div>{{message["username"]}}&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-size: 3px">{{message["datetime"]}}</font></div>
+        <div style="border-radius:5px 5px;background-color: dodgerblue;opacity: 0.8;padding-left: 25px;padding-top: 10px;padding-bottom: 0px"><label ><font style="font-family: 宋体;">{% module linkify(message["body"]) %}</font></label></div>
+    </div>
+</div>

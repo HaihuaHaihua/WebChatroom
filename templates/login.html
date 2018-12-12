@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" style="overflow:hidden;"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+
+    <meta name="author" content="">
+
+    <title>Login</title>
+
+    <!-- Mobile Specific Meta
+      ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon"
+          href="{{ url_for('static', filename='assets_login/ico/favicon.png') }}"/>
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Media Queries -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/media-queries.css') }}">
+
+    <!-- login -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets_login/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets_login/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets_login/css/form-elements.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets_login/css/style.css') }}">
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="{{ url_for('static', filename='assets_login/ico/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="{{ url_for('static', filename='assets_login/ico/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="{{ url_for('static', filename='assets_login/ico/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed"
+          href="{{ url_for('static', filename='assets_login/ico/apple-touch-icon-57-precomposed.png') }}">
+
+
+    <!-- Colors -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/green.css') }}"
+          title="green">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/red.css') }}"
+          title="light-red">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/blue.css') }}" title="blue">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/light-blue.css') }}"
+          title="light-blue">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/yellow.css') }}"
+          title="yellow">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/light-green.css') }}"
+          title="light-green">
+
+    <script src="{{ url_for('static', filename='js/vendor/modernizr.js') }}"></script>
+
+</head>
+
+
+<body id="body">
+<!--
+ 加载动画
+ ==================================== -->
+<div id="preloader">
+    <div class='preloader'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+
+<!-- 
+  菜单栏
+  ==================================== -->
+<header class="navigation navbar navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- responsive nav button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- /responsive nav button -->
+
+            <!-- logo -->
+            <a class="navbar-brand logo" href="index.html">
+                <img src="{{ url_for('static',filename='images/logo.png') }}" alt="Meghna"/>
+            </a>
+            <!-- /logo -->
+        </div>
+
+        <!-- main nav -->
+        <nav class="collapse navbar-collapse navbar-right">
+            <ul id="nav" class="nav navbar-nav menu">
+                <li class="current"><a href={{ url_for("main") }}>主页</a></li>
+                <!-- <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li> -->
+                <li><a href={{ url_for("login") }}>登录</a></li>
+                <li><a href={{ url_for("register") }}>注册</a></li>
+            </ul>
+
+
+        </nav>
+        <!-- /main nav -->
+
+    </div>
+
+    <style type="text/css">
+        #txt {
+            height: 300px;
+            width: 300px;
+            border: 1px solid #333333;
+            text-align: center;
+            position: relative
+
+        }
+
+        #txt p {
+            position: absolute;
+            bottom: 0px;
+            padding: 0px;
+            margin: 0px
+        }
+    </style>
+</header>
+<!-- ==================================== -->
+<!--
+主页布局
+==================================== -->
+
+<section class="hero-area">
+    <!-- Top content -->
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 text">
+                        <br><br><br>
+                        <h1><strong>登录界面</strong></h1>
+                        <!--                     <div class="description">
+                                                    <p>
+                                                      本Web程序基于<a href="#"><strong>Flask</strong></a>框架，使用html开发前端，使用Servlet连接数据库.
+                                                    </p>
+                                                  </div> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>欢迎登录</h3>
+                                <p>请输入你的账号和密码：</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="{{ url_for("login") }}" method="post" class="login-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Telephone...</label>
+                                    <input type="text" name="userid" placeholder="Telephone..."
+                                           class="form-username form-control" id="userid">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Password...</label>
+                                    <input type="password" name="password" placeholder="Password..."
+                                           class="form-password form-control" id="password">
+                                </div>
+                                <label>{{ Tip }}</label>
+                                <button type="submit" class="btn">登录</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 text">
+                        <h3><a href="{{ url_for("main") }}"><strong>Small Chat Room</strong></a></h3>
+                    </div>
+                </div>
+                <!--                    <div class="row">
+                                     <div class="copyright">
+                                     <p> &copy; 2018 All rights reserved | Create by WangHaihua</a></p>
+                                   </div>
+                                   </div> -->
+            </div>
+        </div>
+
+    </div>
+    <!--  -->
+
+</section>
+
+
+<!-- Main jQuery -->
+<script src="{{ url_for('static',filename='js/vendor/jquery-3.1.1.js') }}"></script>
+<!-- Custom js -->
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+<script src="{{ url_for('static',filename='assets_login/js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets_login/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets_login/js/jquery.backstretch.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets_login/js/scripts.js') }}"></script>
+
+</body>
+</html>
+

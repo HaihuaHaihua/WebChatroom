@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" style="overflow:hidden;"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+
+    <meta name="author" content="">
+
+    <title>Myself</title>
+
+    <!-- Mobile Specific Meta
+      ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon"
+          href="{{ url_for('static', filename='assets_login/ico/favicon.png') }}"/>
+
+    <!-- CSS
+    ================================================== -->
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Media Queries -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/media-queries.css') }}">
+
+    <!-- login -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets_login/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='assets_login/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets_login/css/form-elements.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets_login/css/style.css') }}">
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="{{ url_for('static', filename='assets_login/ico/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="{{ url_for('static', filename='assets_login/ico/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="{{ url_for('static', filename='assets_login/ico/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed"
+          href="{{ url_for('static', filename='assets_login/ico/apple-touch-icon-57-precomposed.png') }}">
+
+
+    <!-- Colors -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/green.css') }}"
+          title="green">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/red.css') }}"
+          title="light-red">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/blue.css') }}" title="blue">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/light-blue.css') }}"
+          title="light-blue">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/yellow.css') }}"
+          title="yellow">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors/light-green.css') }}"
+          title="light-green">
+
+    <script src="{{ url_for('static', filename='js/vendor/modernizr.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+
+
+</head>
+
+
+<body id="body">
+
+
+<!-- 
+  菜单栏
+  ==================================== -->
+<header class="navigation navbar navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- responsive nav button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- /responsive nav button -->
+
+            <!-- logo -->
+            <a class="navbar-brand logo" href="index.html">
+                <img src="{{ url_for('static',filename='images/logo.png') }}" alt="Meghna"/>
+            </a>
+            <!-- /logo -->
+        </div>
+
+        <!-- main nav -->
+        <nav class="collapse navbar-collapse navbar-right">
+            <ul id="nav" class="nav navbar-nav menu">
+
+                <li class="current"><a href={{ url_for("main") }}>主页</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8888?u={{ username }}"><font class="f">聊天室</font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/other_users/?u={{ username }}"><font class="f">查看在线用户资料</font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/change_password/?u={{ username }}"><font class="f">修改密码</font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/myself/?u={{ username }}"><font class="f">{{ username }}</font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/exit/?u={{ username }}"><font class="f">退出</font></a>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline" action="/other_users/?u={{ username }}" style="margin-top:15px;"
+                          method="post">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                               name="restrict" value="{{ restrict }}">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                style="height: 34px;width:80px;line-height: 10px;">查找
+                        </button>
+                    </form>
+                </li>
+            </ul>
+
+
+        </nav>
+        <!-- /main nav -->
+
+    </div>
+
+    <style type="text/css">
+        #txt {
+            height: 300px;
+            width: 300px;
+            border: 1px solid #333333;
+            text-align: center;
+            position: relative
+
+        }
+
+        #txt p {
+            position: absolute;
+            bottom: 0px;
+            padding: 0px;
+            margin: 0px
+        }
+    </style>
+</header>
+<!-- ==================================== -->
+<!--
+主页布局
+==================================== -->
+
+<section class="hero-area">
+    <!-- Top content -->
+    <div class="top-content">
+
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 text">
+                        <br><br><br>
+                        <h1><strong>修改个人信息</strong></h1>
+                        <!--                     <div class="description">
+                                                    <p>
+                                                      本Web程序基于<a href="#"><strong>Flask</strong></a>框架，使用html开发前端，使用Servlet连接数据库.
+                                                    </p>
+                                                  </div> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+
+                            <div class="form-top-left">
+                                <h3>修改个人信息</h3>
+                                <p>请输入你新的个人信息：</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+
+                            <form action="/myself/?u={{ username }}" method="post">
+
+                                <table>
+                                    <tr>
+                                        <td><label style="padding-left: 40px;" for="username">用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label>
+                                        </td>
+                                        <td><input type="text" class="form-control"
+                                                   style="width:350px;display:inline-block;" id="username"
+                                                   placeholder="请输入用户名" name="username"
+                                                   value="{{ current_user.username }}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label style="padding-left: 40px;" for="telephone">电话号码：</label></td>
+                                        <td><input type="text" class="form-control" id="telephone" placeholder="请输入电话号码"
+                                                   name="telephone" value="{{ current_user.telephone }}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label style="padding-left: 40px;" for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</label>
+                                        </td>
+                                        <td><input type="text" class="form-control" id="email" placeholder="请输入邮箱"
+                                                   name="email" value="{{ current_user.email }}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label style="padding-left: 40px;" for="age">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</label>
+                                        </td>
+                                        <td><input type="text" class="form-control" id="age" placeholder="年龄" name="age"
+                                                   value="{{ current_user.age }}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label style="padding-left: 40px;" for="gender">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+                                        </td>
+                                        <td>
+                                            {% if current_user.gender=="男" %}
+                                                <input type="radio" id="gender" name="gender" value="男" checked>男&nbsp;
+                                                &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" id="gender" name="gender" value="女">女
+                                            {% else %}
+                                                <input type="radio" id="gender" name="gender" value="男">男&nbsp;&nbsp;
+                                                &nbsp;&nbsp;
+                                                <input type="radio" id="gender" name="gender" value="女" checked>女
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label style="padding-left: 40px;" for="job">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</label>
+                                        </td>
+                                        <td>
+                                            {% if current_user.job=="程序员" %}
+                                                <select id="job" class="form-control" name="job">
+                                                    <option selected>程序员</option>
+                                                    <option>老师</option>
+                                                    <option>学生</option>
+                                                    <option>医生</option>
+                                                </select>
+                                            {% elif current_user.job=="老师" %}
+                                                <select id="job" class="form-control" name="job">
+                                                    <option>程序员</option>
+                                                    <option selected>老师</option>
+                                                    <option>学生</option>
+                                                    <option>医生</option>
+                                                </select>
+                                            {% elif current_user.job=="学生" %}
+                                                <select id="job" class="form-control" name="job">
+                                                    <option>程序员</option>
+                                                    <option>老师</option>
+                                                    <option selected>学生</option>
+                                                    <option>医生</option>
+                                                </select>
+                                            {% else %}
+                                                <select id="job" class="form-control" name="job">
+                                                    <option>程序员</option>
+                                                    <option>老师</option>
+                                                    <option>学生</option>
+                                                    <option selected>医生</option>
+                                                </select>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label style="padding-left: 40px;margin-top:5px;" for="other">其&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他：</label>
+                                        </td>
+                                        <td><textarea class="form-control" id="other" placeholder="说点什么吧..."
+                                                      name="other" rows="3">{{ current_user.other }}</textarea></td>
+                                        <td width="50px"></td>
+                                    </tr>
+                                    {#                        <tr>#}
+                                    {#                            <td></td>#}
+                                    {#                            <td class="d_btn" align="right">#}
+                                    {#                                <input type="submit" value="提交"  class="btn btn-primary" id="submit" name="submit">#}
+                                    {#                            </td>#}
+                                    {#                        </tr>#}
+                                </table>
+                                <label style="padding-left: 70px;" for="other"></label>
+                                <button type="submit" class="btn"
+                                        style=" margin-top:10px;height: 45px; width:380px;display:inline-block;">提交
+                                </button>
+
+                                {#                              <input type="submit" value="提交" style=" margin-top:10px;height: 35px; width:350px;display:inline-block;"  class="btn" id="submit" name="submit">#}
+                            </form>
+
+                            {#                              <form role="form" action="/myself/?u={{ username }}" method="post" class="login-form">#}
+                            {#                            <div class="form-group">#}
+                            {#                              <label for="username">用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label>#}
+                            {#                              <input type="text" class="form-control" id="username" placeholder="请输入用户名" name="username" value="{{ current_user.username }}">#}
+                            {#                            </div>#}
+                            {#                              <div class="form-group">#}
+                            {#                               <label for="telephone">电话号码：</label>#}
+                            {#                                <input type="text" class="form-control" id="telephone" placeholder="请输入电话号码" name="telephone" value="{{ current_user.telephone }}">#}
+                            {#                              </div>#}
+                            {#                              <div class="form-group">#}
+                            {#                               <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</label>#}
+                            {#                            <input type="text" class="form-control" id="email" placeholder="请输入邮箱" name="email" value="{{ current_user.email }}">#}
+                            {#                              </div>#}
+                            {#                              <div class="form-group">#}
+                            {#                               <label for="gender">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>#}
+                            {#                                {% if current_user.gender=="男" %}#}
+                            {#                                    <select id="gender" class="form-control" name="gender">#}
+                            {#                                        <option selected>男</option>#}
+                            {#                                        <option>女</option>#}
+                            {#                                    </select>#}
+                            {#                                {% else %}#}
+                            {#                                    <select id="gender" class="form-control" name="gender">#}
+                            {#                                        <option >男</option>#}
+                            {#                                        <option selected>女</option>#}
+                            {#                                    </select>#}
+                            {#                                {% endif %}#}
+                            {#                                </div>#}
+                            {#                             <div class="form-group">#}
+                            {#                               <label for="age">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</label>#}
+                            {#                            <input type="text" class="form-control" id="age" placeholder="年龄" name="age" value="{{ current_user.age }}">#}
+                            {#                            </div>#}
+                            {#                            <div class="form-group">#}
+                            {#                               <label for="job">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</label>#}
+                            {##}
+                            {#                                {% if current_user.city=="程序员" %}#}
+                            {#                                    <select id="job" class="form-control" name="job">#}
+                            {#                                        <option selected>程序员</option>#}
+                            {#                                        <option>老师</option>#}
+                            {#                                        <option>学生</option>#}
+                            {#                                        <option>医生</option>#}
+                            {#                                    </select>#}
+                            {#                                {% elif current_user.city=="老师" %}#}
+                            {#                                    <select id="job" class="form-control" name="job">#}
+                            {#                                        <option >程序员</option>#}
+                            {#                                        <option selected>老师</option>#}
+                            {#                                        <option>学生</option>#}
+                            {#                                        <option>医生</option>#}
+                            {#                                    </select>#}
+                            {#                                {% elif current_user.city=="学生" %}#}
+                            {#                                    <select id="job" class="form-control" name="job">#}
+                            {#                                        <option >程序员</option>#}
+                            {#                                        <option>老师</option>#}
+                            {#                                        <option selected>学生</option>#}
+                            {#                                        <option>医生</option>#}
+                            {#                                    </select>#}
+                            {#                                {% else %}#}
+                            {#                                    <select id="job" class="form-control" name="job">#}
+                            {#                                        <option >程序员</option>#}
+                            {#                                        <option>老师</option>#}
+                            {#                                        <option>学生</option>#}
+                            {#                                        <option selected>医生</option>#}
+                            {#                                    </select>#}
+                            {#                                {% endif %}#}
+                            {#                            </div>#}
+                            {#                            <div class="form-group">#}
+                            {#                                <label for="other">其&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他：</label>#}
+                            {#                                <textarea class="form-control" id="other" placeholder="说点什么吧..." name="other" rows="3">{{ current_user.other }}</textarea>#}
+                            {#                            </div>#}
+                            {#                              <input type="submit" value="提交"  class="btn btn-primary" id="submit" name="submit">#}
+                            {#                              <button type="submit" class="btn">提交</button>#}
+                            {#                          </form>#}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 text">
+                    <h3><a href="{{ url_for("main") }}"><strong>Small Chat Room</strong></a></h3>
+                </div>
+            </div>
+            <!--                    <div class="row">
+                                 <div class="copyright">
+                                 <p> &copy; 2018 All rights reserved | Create by WangHaihua</a></p>
+                               </div>
+                               </div> -->
+        </div>
+    </div>
+
+    </div>
+    <!--  -->
+
+</section>
+
+
+<!-- Main jQuery -->
+<script src="{{ url_for('static',filename='js/vendor/jquery-3.1.1.js') }}"></script>
+<!-- Custom js -->
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+<script src="{{ url_for('static',filename='assets_login/js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets_login/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets_login/js/jquery.backstretch.min.js') }}"></script>
+<script src="{{ url_for('static',filename='assets_login/js/scripts.js') }}"></script>
+
+</body>
+</html>
+

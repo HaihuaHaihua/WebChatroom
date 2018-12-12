@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+
+    <meta name="author" content="">
+
+    <title>Home</title>
+
+    <!-- Mobile Specific Meta
+      ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+
+    <!-- CSS
+    ================================================== -->
+    <!-- RS5.0 Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="static/revolution/css/settings.css">
+    <!-- RS5.0 Layers and Navigation Styles -->
+    <link rel="stylesheet" type="text/css" href="static/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="static/revolution/css/navigation.css">
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link rel="stylesheet" type="text/css" href="static/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="static/revolution/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="static/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="static/revolution/css/navigation.css">
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" href="static/css/vendor/tf-fonts.min.css">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="static/css/vendor/bootstrap.min.css">
+    <!-- Lightbox.min css -->
+    <link rel="stylesheet" href="static/css/vendor/lightbox.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="static/css/vendor/animate.min.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="static/css/vendor/owl.carousel.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Media Queries -->
+    <link rel="stylesheet" href="static/css/vendor/media-queries.css">
+
+
+    <!-- Colors -->
+    <link rel="stylesheet" type="text/css" href="static/css/colors/green.css" title="green">
+    <link rel="stylesheet" type="text/css" href="static/css/colors/blue.css" title="blue">
+    <link rel="stylesheet" type="text/css" href="static/css/colors/light-blue.css" title="light-blue">
+    <link rel="stylesheet" type="text/css" href="static/css/colors/yellow.css" title="yellow">
+    <link rel="stylesheet" type="text/css" href="static/css/colors/light-green.css" title="light-green">
+
+    <script src="static/js/vendor/modernizr.js"></script>
+
+</head>
+
+<body id="body">
+
+<!--
+ 加载动画
+ ==================================== -->
+<div id="preloader">
+    <div class='preloader'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<!-- 
+  菜单栏
+  ==================================== -->
+<header class="navigation navbar navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- responsive nav button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- /responsive nav button -->
+
+            <!-- logo -->
+            <a class="navbar-brand logo" href="index.html">
+                <img src="static/images/logo.png" alt="Meghna"/>
+            </a>
+            <!-- /logo -->
+        </div>
+
+        <!-- main nav -->
+        <nav class="collapse navbar-collapse navbar-right">
+            <ul id="nav" class="nav navbar-nav menu">
+                <li class="current"><a href={{ url_for("main") }}>主页</a></li>
+                <!-- <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li> -->
+                <li><a href={{ url_for("login") }}>登录</a></li>
+                <li><a href={{ url_for("register") }}>注册</a></li>
+            </ul>
+
+
+        </nav>
+        <!-- /main nav -->
+
+    </div>
+
+    <style type="text/css">
+        #txt {
+            height: 300px;
+            width: 300px;
+            border: 1px solid #333333;
+            text-align: center;
+            position: relative
+
+        }
+
+        #txt p {
+            position: absolute;
+            bottom: 0px;
+            padding: 0px;
+            margin: 0px
+        }
+    </style>
+</header>
+<!-- ==================================== -->
+<!--
+主页布局
+==================================== -->
+
+<section class="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h1>Small Chat Room</h1>
+                    <p>团队成员：周寅莹、王海华、张倩、彭子航、刘韵彤</p>
+                    <a data-scroll href="{{ url_for("login") }}" class="btn btn-main">登录 / 注册</a>
+
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div id=p>
+            <div class="copyright">
+              <p> &copy; 2018 All rights reserved | Create by WangHaihua</a></p>
+            </div>
+          </div>
+        </div> -->
+    </div>
+</section>
+
+
+<!-- button -->
+
+
+<!--
+Essential Scripts
+=====================================-->
+
+<!-- Main jQuery -->
+<script src="{{ url_for('static',filename='js/vendor/jquery-3.1.1.js') }}"></script>
+<!-- Custom js -->
+<script src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+</body>
+</html>
+
